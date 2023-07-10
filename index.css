@@ -2,13 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'zai Thin Handwritten Lettering', sans-serif;
 }
 
 body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -16,12 +17,55 @@ body {
     width: 95vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .options {
-    width: 550px;
-    height: 950px;
-    background-color: aliceblue;
+    width: 30vw;
+    height: 100vh;
+    background-color: rgba(233, 239, 240, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5em;
+    letter-spacing: 0.2em;
+    padding-top: 20px;
+}
+
+.gridOptionsContainer {
+    margin-top: 50px;
+    background-color: rgba(184, 189, 190, 0.5);
+    padding: 30px 10px 30px 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gridOptionsContainer > span {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.gridInput {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.gridInput > span {
+    font-size: 2em;
+    letter-spacing: 0.1em;
+}
+
+.gridInput > input {
+    padding: 0px 0px 0px 15px;
+    font-size: 2em;
+    border-radius: 10px;
+    border: 1px solid;
 }
 
 .sketchPad {
@@ -34,12 +78,117 @@ body {
 }
 
 .grid {
-    width: 56.25px;
-    height: 56.25px;
     background-color: #ffffee;
 }
 
-.gridActive {
+#gridActive {
     background-color: #5c6274;
+}
+
+.error {
+    border: 1px solid red !important;
+    outline: red;
+    color: red;
+}
+
+.error:focus {
+    border-color: 2px solid red !important;
+}
+
+.colourPaletteContainer {
+    margin-top: 50px;
+    background-color: rgba(184, 189, 190, 0.5);
+    width: 22vw;
+    height: 45vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colourPaletteContainer > h3 {
+    margin-top: 20px;
+    font-size: 3em;
+    letter-spacing: 0.1em;
+}
+
+.colours-container {
+    margin-top: 10px;
+    width: 20vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px
+}
+
+.colourRow {
+    width: 20vw;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.colour {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+#black {
+    background-color: black;
+}
+#grey {
+    background-color: grey;
+}
+#white {
+    background-color: white;
+}
+#red {
+    background-color: red;
+}
+#orange {
+    background-color: orange;
+}
+#yellow {
+    background-color: yellow;
+}
+#green {
+    background-color: green;
+}
+#aqua {
+    background-color: aqua;
+}
+#blue {
+    background-color: blue;
+}
+#indigo {
+    background-color: indigo;
+}
+#purple {
+    background-color: purple;
+}
+#pink {
+    background-color: pink;
+}
+
+.buttonsContainer {
+    margin-top: 40px;
+    width: 22vw;
+    height: 7vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    font-size: 3em;
+    padding: 0px 50px 0px 50px;
+    border-radius: 50px;
+    letter-spacing: 0.1em;
 }
 

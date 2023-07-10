@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-container {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options {
+    width: 550px;
+    height: 950px;
+    background-color: aliceblue;
+}
+
+.sketchPad {
+    width: 900px;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.grid {
+    width: 56.25px;
+    height: 56.25px;
+    background-color: #ffffee;
+}
+
+.gridActive {
+    background-color: #5c6274;
+}
+

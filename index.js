@@ -119,7 +119,6 @@ randCol.addEventListener('click', () => {
     }
     //set to local storage
     localStorage.setItem('col', col)
-    createGrid(l, h)
 });
 
 //function to rest grid

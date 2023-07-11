@@ -78,21 +78,3 @@ function resetGrid() {
         grid.remove();
     })
 };
-
-//Get clicked colour call set function
-let colours = document.querySelectorAll('.colour')
-colours.forEach((colour) => {
-    colour.addEventListener('click', () => {
-        let col = colour.id;
-        console.log(col);
-        setColour(col);
-    })
-})
-
-//Set color palette
-function setColour(colour) {
-    let grids = document.querySelectorAll('#gridActive')
-    grids.forEach((grid) => {
-        grid.style.cssText = `Background-color: ${colour}`;
-    })
-}

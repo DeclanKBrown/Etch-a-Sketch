@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #e1e1d3;
 }
 
 .main-container {
@@ -66,25 +67,11 @@ body {
 }
 
 .grid {
-    background-color: #ffffee;
+    /* background-color: #ffffee; */
 }
-
-.gridOne {
-    border-top-left-radius: 5px;
-}
-.gridTwo {
-    border-top-right-radius: 5px;
-}
-.gridThree {
-    border-bottom-left-radius: 5px;
-}
-.gridFour {
-    border-bottom-right-radius: 5px;
-}
-
 
 #gridActive {
-    background-color: #5c6274;
+    /* background-color: grey; */
 }
 
 .bottom-container {
@@ -117,9 +104,18 @@ body {
     align-items: flex-end;
     justify-content: flex-start;
 }
+
+#left:active {
+    color: #E6BF39;
+    border: 3px solid #E6BF39;
+}
+
 .btn {
     background-color: rgb(255, 255, 255);
-    padding: 60px;
+    padding: 0px;
+    width: 120px;
+    height: 120px;
+    font-size: 1.6em;
     border: none;
     border-radius: 60px;
 }
@@ -171,5 +167,10 @@ body {
 
 .error:focus {
     border-color: 2px solid red !important;
+}
+
+.randActive {
+    border: 1px solid #E6BF39;
+    color: #E6BF39;
 }
 

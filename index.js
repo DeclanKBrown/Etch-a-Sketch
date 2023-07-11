@@ -23,7 +23,7 @@ function createGrid(l, h) {
             //set grid section heaight to fit
             let height = 619/ h;
             let width = 1100/ l;
-            div.style.cssText = `height: ${height}px; width: ${width}px;`;
+            div.style.cssText = `height: ${height}px; width: ${width}px; background-color: #ffffee;`;
             //add to DOM
             sketchPad.appendChild(div);
             
@@ -40,6 +40,7 @@ window.addEventListener("load", () => {
     dims.value = l;
     dims2.value = h;
     createGrid(l, h);
+    localStorage.setItem('col', false)
   });
 
 //Event listener to get user input 
@@ -68,9 +69,28 @@ dims.addEventListener('change', (e) => {
 // event to color in grid section
 function addEvent(div) {
     div.addEventListener('mouseover', (event) => {
-        event.target.id = 'gridActive'
+        let col = localStorage.getItem('col');
+        if (col === 'true') { 
+            let a = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            let c = Math.floor(Math.random() * 255);
+            event.target.style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
+        } else {
+            let opacity = 0.1;
+            let e = event.target.style.backgroundColor;
+            if (e.includes('rgba')) {
+                let a = e.split('.');
+                let b = a[1].replace(')', '');
+                let c = parseInt(b);
+                    c++;
+                    opacity = c / 10.0;
+            }
+            event.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`; 
+        }
     });
 }
+
+
 
 //Reset button 
 let resetBtn = document.getElementById('left');
@@ -82,6 +102,26 @@ function resetButton() {
     createGrid(l, h);
 }
 
+//Rbadom Colour
+let randCol = document.getElementById('right');
+randCol.addEventListener('click', () => {
+    let l = localStorage.getItem('l');
+    let h = localStorage.getItem('h');
+
+    //toggle
+    let col = false;
+    if (randCol.classList.contains('randActive')) {
+        col = false
+        randCol.classList.remove('randActive');
+    } else if (!randCol.classList.contains('randActive')) {
+        col = true
+        randCol.classList.add('randActive');
+    }
+    //set to local storage
+    localStorage.setItem('col', col)
+    createGrid(l, h)
+});
+
 //function to rest grid
 function resetGrid() {
     const section = document.querySelectorAll('.grid');
@@ -89,3 +129,4 @@ function resetGrid() {
         grid.remove();
     })
 };
+

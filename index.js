@@ -97,6 +97,21 @@ let resetBtn = document.getElementById('left');
 resetBtn.addEventListener('click', resetButton);
 
 function resetButton() {
+    //adding shake 
+    const main = document.querySelector('.main-container');
+    for (const child of main.children) {
+        main.classList.add('shake')
+        child.classList.add('shake')
+    }
+    //remove after timout
+    setTimeout(removeShake, 500)
+    function removeShake() {
+        for (const child of main.children) {
+            main.classList.remove('shake')
+            child.classList.remove('shake')
+        }
+    }
+
     l = localStorage.getItem('l')
     h = localStorage.getItem('h')
     createGrid(l, h);
